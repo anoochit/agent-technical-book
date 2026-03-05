@@ -69,7 +69,7 @@ The system is managed by a **Root Orchestrator** which delegates tasks to the fo
 Start the interactive agent dashboard:
 
 ```bash
-adk web --config-path orchestrator/root_agent.yaml
+adk web
 ```
 
 #### Run the API Server
