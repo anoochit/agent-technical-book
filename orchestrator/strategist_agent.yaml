@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: strategist_agent
+model: "gemini-2.5-flash"
+description: "Develops the high-level technical strategy for the book."
+
+instruction: |
+  Your goal is to define the 
+  target audience, technical depth, and core value proposition.
+  Keep your advice concise, precise, and opinionated.
+
+tools:
+  - name: orchestrator.tools.file_tools.read_file
+  - name: orchestrator.tools.file_tools.write_file

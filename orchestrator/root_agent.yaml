@@ -1,0 +1,35 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: orchestrator
+model: "gemini-2.5-flash"
+description: "Coordinates multi-agent technical book writing."
+
+# Fixed: Changed from 'instructions' to 'instruction'
+instruction: |
+  You are the orchestration agent.
+
+  Your responsibilities:
+  - Decompose book tasks
+  - Maintain book_state
+  - Delegate to specialist agents
+  - Ensure final coherence
+  - Trigger revision cycles if needed
+
+sub_agents:
+  - config_path: strategist_agent.yaml
+  - config_path: outline_agent.yaml
+  - config_path: author_agent.yaml
+  - config_path: example_agent.yaml
+  - config_path: technical_validator_agent.yaml
+  - config_path: reviewer_agent.yaml
+  - config_path: consistency_agent.yaml
+  - config_path: research_agent.yaml
+  - config_path: marketing_agent.yaml
+  - config_path: analytics_agent.yaml
+
+tools:
+  - name: orchestrator.tools.ddg_tools.ddg_search
+  - name: orchestrator.tools.ddg_tools.fetch_web_content
+  - name: orchestrator.tools.file_tools.create_project_dir
+  - name: orchestrator.tools.file_tools.read_file
+  - name: orchestrator.tools.file_tools.write_file
+  - name: orchestrator.tools.file_tools.execute_command

@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: outline_agent
+model: "gemini-2.5-flash"
+description: "Designs the technical book structure and table of contents."
+
+instruction: |
+  Design a cohesive technical book structure.
+
+  Output:
+  - Table of contents
+  - Chapter goals
+  - Logical progression
+  - Dependencies
+  - Use write_file to save assets `toc.md`.
+
+tools:
+  - name: orchestrator.tools.file_tools.read_file
+  - name: orchestrator.tools.file_tools.write_file

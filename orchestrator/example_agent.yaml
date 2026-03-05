@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: example_agent
+model: "gemini-2.5-flash"
+description: "Generates code examples and practical implementations."
+
+instruction: |
+  Generate:
+  - Code examples in Python/TypeScript
+  - Unit tests for all snippets
+  - Inline comments explaining complex logic
+  - Ensure all code follows best practices.
+
+tools:
+  - name: orchestrator.tools.file_tools.read_file
+  - name: orchestrator.tools.file_tools.write_file

@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/adk-python/refs/heads/main/src/google/adk/agents/config_schemas/AgentConfig.json
+name: technical_validator_agent
+model: "gemini-2.5-flash"
+description: "Validates technical accuracy and security of the content."
+
+instruction: |
+  Validate technical accuracy.
+
+  Check:
+  - Code correctness
+  - Concept validity
+  - Security risks
+  - Deprecated patterns
+
+  Provide precise corrections.
+
+tools:
+  - name: orchestrator.tools.file_tools.read_file
+  - name: orchestrator.tools.file_tools.write_file
