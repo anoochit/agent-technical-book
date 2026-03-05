@@ -64,10 +64,20 @@ The system is managed by a **Root Orchestrator** which delegates tasks to the fo
 
 ### Usage
 
-Run the main orchestration script to start the book-writing process:
+#### Run the Web UI
+
+Start the interactive agent dashboard:
 
 ```bash
-adk web
+adk web --config-path orchestrator/root_agent.yaml
+```
+
+#### Run the API Server
+
+Start a RESTful interface for external integration:
+
+```bash
+adk api_server
 ```
 
 ## License
